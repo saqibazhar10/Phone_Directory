@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>login Form</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    *{
+    padding: 0;
+    margin: 0;
+    height: 30px;
+}
+body{
+    background: url("{% static 'directory/asd.jpg' %}");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color:#464646;
+    font-family: 'Lato', sans-serif;
+    /* For mobile devices */
+@media only screen and (max-width: 767px) {
+  body {
+    /* The file size of this background image is 93% smaller
+     * to improve page load speed on mobile internet connections */
+     background: url("{% static 'directory/asd.jpg' %}");
+  }
+	}
+
+
+}
+.login-form{
+    width: 350ox;
+
+    top: 50%;
+    left: 50%;
+    top: 120px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: #fff;
+}
+.login-form h1{
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 50px 0;
+
+}
+
+.login-form p {
+    font-size:15px;
+    margin: 15px, 0;
+}
+.login-form imput{
+    font-size: 12px;
+    width: 50%;
+    padding: 5px 10px;
+    border: 0;
+    outline: none;
+    border-radius: 5px; 
+}
+.login-form button{
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 2px 16px;
+    width: 50%;
+    border-radius: 5px;
+    border: 0;
+ }
+</style>
+<body>
+    <div class ="login-form">
+        <h1>SignUp Form</h1>
+        <form action="#" method="post"><br>
+            {% csrf_token %}
+        <p>User Name</p>
+        <input type="text" user name="user" placeholder="User name" required>
+        <br><br><p>User Email</p>
+        <input type="text" name="email" placeholder="User Email" required>
+        <br><br><p>Phone Number</p>
+        <input type="text" name="phone" phone number ="user" placeholder="Phone number" value = "" maxlength = "12" required>
+        <br><br><p>Password</p>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submint">SignUp</button>
+        </form>
+    </div>
+</body>
+
+</html>

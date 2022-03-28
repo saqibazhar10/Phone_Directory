@@ -1,0 +1,102 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block body %}
+
+    <title>Add Contact</title>
+<style>
+/* Add Contact Css */
+    body {
+
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        font-family: 'Poppins', sans-serif;
+        opacity: 0.8;
+    }
+    .container {
+            margin: auto;
+            /* for  setting the container to center*/
+            width: 40%;
+            padding: 30px;
+            border-radius: 20px;
+            background-color: white;
+            position: relative;
+            top: 40px;
+            /* display: none; */
+            margin-top: 50px;
+            box-shadow: 0px 20px 20px 0px rgba(5, 5, 5, 0.7)
+
+        }
+        input[type='text'],
+        input[type='text'],
+        input[type="tel"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background: rgb(202, 200, 200);
+            display: inline-block;
+            margin: 5px 0 22px 0;
+        }
+        .btn {
+            color: white;
+            width: 20%;
+            border-radius: 30px;
+            padding: 15px;
+            border: none;
+            background: teal;
+            margin: 5px 0 22px 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn:hover {
+            box-shadow: 3px 3px 1px rgb(1, 51, 51);
+            position: relative;
+            top: -2px;
+            transition: 0.1s ease-in;
+            cursor: pointer;
+        }
+</style>
+
+<body>
+    {% block nav %}
+    <span class="admin_name"><b> {{name}} </b></span>
+    {% endblock nav %}
+
+        <div class="container" id="contact">
+            <form class="log" action="#" method="POST">
+                {%csrf_token%}
+                <h1 style="text-align: center;">Add Contacts</h1>
+    
+    <br>
+                <label for="fn">First Name</label> <br>
+                <input type="text" name="name" placeholder="First Name" required>
+    
+                <label for="psw">Last Name</label> <br>
+                <input type="text" name="lname" placeholder="Last Name" required> <br>
+    
+    
+                <label for="psw">Phone No</label> <br>
+                <input type="tel" name="phone" placeholder="Enter the Phone No" required> <br>
+
+                <label for="psw">Address</label> <br>
+                <input type="text" name="address" placeholder="Enter Your Address" required> <br>
+    
+    
+                <!-- <label for="img">Select image:</label>
+                <input type="file" id="img" name="img" accept="image/*"> -->
+                <br><br>
+                <div id="submit">
+                    <button class="btn" type="submit">Submit</button>
+                </div>
+            </form>
+
+
+        </div>
+
+    
+    
+
+</body>
+{% endblock %}

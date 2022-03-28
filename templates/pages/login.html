@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login Form</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    *{
+    padding: 0;
+    margin: 0;
+    height: 30px;
+
+}
+body{
+    background: url("{% static 'directory/asd.jpg' %}");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color:#464646;
+    font-family: 'Lato', sans-serif;
+    /* For mobile devices */
+@media only screen and (max-width: 767px) {
+  body {
+    /* The file size of this background image is 93% smaller
+     * to improve page load speed on mobile internet connections */
+     background: url("{% static 'directory/asd.jpg' %}");
+  }
+	}
+
+
+}
+.login-form{
+    width: 350ox;
+    top: 50%;
+    left: 50%;
+    top: 120px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: #fff;
+    
+}
+.login-form h2{
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 40px 0;
+    letter-spacing:2px;
+    
+
+}
+
+.login-form p {
+    font-size:15px;
+    margin: 15px, 0;
+    letter-spacing:1px;
+}
+.login-form input{
+    font-size: 12px;
+    width: 50%;
+    padding: 5px 10px;
+    border: 0;
+    outline: none;
+    border-radius: 5px; 
+    letter-spacing:1px;
+}
+.login-form button{
+    font-size: 10px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 2px 1px;
+    width: 25%;
+    border-radius: 5px;
+    border: 0;
+    letter-spacing:1px;
+ }
+ .btn:hover {
+    background-color: #ff1a7d;
+    color: white;
+  }
+
+</style>
+<body>
+    <div class ="login-form">
+        <h2 style="font-size:4vw">Login Form</h2>
+        <form action="#" method="post">
+            {% csrf_token%}<br>
+            <p>User Email</p>
+            <input type="text"  id="fname" name="email" placeholder="User Email" required>
+            <br><br><p>Password</p>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <button class="btn" type="submint">Login</button>
+            <a class="btn-1"style="color:white; font-size:14px;" href="/register"> create acccount?</a>
+        </form>
+        
+    </div>
+
+    
+</body>
+</html>
